@@ -1,21 +1,21 @@
-
 # deck.rb
 
 require_relative 'card'
+SUITS = [:hearts, :spades, :clubs, :diamonds]
+
 
 class Deck
   attr_reader :cards, :count
 
   def initialize
-    @cards = [
-      [:hearts, :spades, :clubs, :diamonds].each do |suit|
-        (1..13).each do |value|
-          card = Card.new(value, suit)
-          expect(card).must_be_instance_of Card
-        end
+    @cards = []
+    SUITS.each do |suit|
+      (1..13).each do |value|
+        @cards << Card.new(value, suit)
       end
-    ]
-    @count = cards.length
+    end
+
+    @count = 52
   end
 
   def draw
