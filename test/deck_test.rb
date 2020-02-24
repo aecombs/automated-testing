@@ -5,5 +5,4 @@ describe Deck do
   # What should you test?
     # 1.  Expected Behavior
     # 2.  Edge cases
-
 end
